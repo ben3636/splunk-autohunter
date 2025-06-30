@@ -22,4 +22,4 @@ Advanced Mode
 Elements of the main dashboard use the `askllama` command to summarize articles using a local LLM, you can install the command here: https://github.com/ben3636/splunk-llama
 
 ## Demo
-![Alt text](Demo1.mov)
+https://drive.google.com/file/d/12mVLEtFxBs5_Jraz8Xf_aMuzLSFCtbOJ/view?usp=sharing
