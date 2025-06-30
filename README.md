@@ -23,3 +23,5 @@ Elements of the main dashboard use the `askllama` command to summarize articles 
 
 ## Demo
 https://drive.google.com/file/d/12mVLEtFxBs5_Jraz8Xf_aMuzLSFCtbOJ/view?usp=sharing
+
+https://raw.githubusercontent.com/ben3636/splunk-autohunter/refs/heads/main/Demo1.mov
