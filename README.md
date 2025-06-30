@@ -19,3 +19,5 @@ Normal Mode
 Advanced Mode
 > | webreader url="\<URL\>" mode=advanced selenium_server="http://\<IP\>:4444/wd/hub"
 
+Elements of the main dashboard use the `askllama` command to summarize articles using a local LLM, you can install the command here: https://github.com/ben3636/splunk-llama
+
