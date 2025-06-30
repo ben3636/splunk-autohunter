@@ -10,3 +10,12 @@ If an article's content is not being retrieved in normal mode, there may be a Ja
 > API for above container would be http://\<IP\>:4444/wd/hub
 
 While this product was initially meant to be a way to manually ingest OSINT and hunt, I will be adding features that will pair with my RSS Streamer app (https://github.com/ben3636/splunk-rss) to iterate over RSS links in the index and automatically read and hunt the IOCs contained in each. A hunt report will then be delivered via scheduled search for the results.
+
+## Commands // Usage
+
+Normal Mode
+> | webreader url="\<URL\>" mode=normal
+
+Advanced Mode
+> | webreader url="\<URL\>" mode=advanced selenium_server="http://\<IP\>:4444/wd/hub"
+
