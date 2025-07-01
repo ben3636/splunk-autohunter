@@ -23,5 +23,11 @@ Normal Mode
 Advanced Mode
 > | webreader url="\<URL\>" mode=advanced selenium_server="http://\<IP\>:4444/wd/hub"
 
+`webreader` in its basic form is a generating command because it will be the first command in your search. Sometimes you may encounter instances where you already have a search with results containing a link in each event. If this is the case, an alternate version of `webreader` is available called `streamingwebreader`. `streamingwebreader` takes the same arguments as `webreader` but it is a streaming command and can be used during an existing search to use links present in event fields. Instead of passing an actual URL in the `url` argument, simply use the field name that contains the links in your events:
+
+> | makeresults | eval link="https://google[.]com" | streamingwebreader url=link mode=normal
+
+This functionality is key for the integration with AutoHunter's sister app, RSS Streamer. RSS Streamer (https://github.com/ben3636/splunk-rss) allows you to specify RSS feeds in a lookup and Splunk will automatically ingest the feed data to a stash index. AutoHunter can then collect all the links to the articles from this data, start reading the articles, extracting the IOCs, and performing hunts autonomously (the crowd gasps). Neat trick right? AutoHunter is a beast on her own but when she teams up with her sister they're a force to be reckoned with. These autonomous hunt reports go out as part of the scheduled searches, more on this to come.
+
 ## Demo
 https://drive.google.com/file/d/12mVLEtFxBs5_Jraz8Xf_aMuzLSFCtbOJ/view?usp=sharing
