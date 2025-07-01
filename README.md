@@ -3,6 +3,9 @@ AutoHunter is a collection of custom Splunk commands and dashboards that serve t
 
 > NOTE: Elements of the main dashboard use the `askllama` command to summarize articles using a local LLM, you can install the command here if you'd like to use this functionality: https://github.com/ben3636/splunk-llama
 
+## Demo
+https://drive.google.com/file/d/12mVLEtFxBs5_Jraz8Xf_aMuzLSFCtbOJ/view?usp=sharing
+
 ## Modes of Operation
 While using the main dashboard and/or the `webreader` command, you will notice the `mode` parameter. This determines how the remote content is retrieved. Normal mode uses Python's basic requests to retrieve the content and BeautifulSoup for text parsing. This is fast and ideal for basic parsing and will run right on the Splunk instance natively.
 
@@ -27,7 +30,15 @@ Advanced Mode
 
 > | makeresults | eval link="https://google[.]com" | streamingwebreader url=link mode=normal
 
-This functionality is key for the integration with AutoHunter's sister app, RSS Streamer. RSS Streamer (https://github.com/ben3636/splunk-rss) allows you to specify RSS feeds in a lookup and Splunk will automatically ingest the feed data to a stash index. AutoHunter can then collect all the links to the articles from this data, start reading the articles, extracting the IOCs, and performing hunts autonomously (the crowd gasps). Neat trick right? AutoHunter is a beast on her own but when she teams up with her sister they're a force to be reckoned with. These autonomous hunt reports go out as part of the scheduled searches, more on this to come.
+This functionality is key for the integration with AutoHunter's sister app, RSS Streamer. RSS Streamer (https://github.com/ben3636/splunk-rss) allows you to specify RSS feeds in a lookup and Splunk will automatically ingest the feed data to a stash index. AutoHunter can then collect all the links to the articles from this data, start reading the articles, extracting the IOCs, and performing hunts autonomously (the crowd gasps). Neat trick right? AutoHunter is a beast on her own but when she teams up with her sister they're a force to be reckoned with. These autonomous hunt reports go out as part of the scheduled searches, more on this in the next section.
 
-## Demo
-https://drive.google.com/file/d/12mVLEtFxBs5_Jraz8Xf_aMuzLSFCtbOJ/view?usp=sharing
+## Autonomous Operation
+AutoHunter can automatically read, extract IOCs from, and hunt articles from RSS data from RSS Streamer (https://github.com/ben3636/splunk-rss). This process leverages the `streamingwebreader` command and the scheduled searches included in the app:
+
+1. RSS data is ingested from RSS Streamer, landing in a stash index
+2. AutoHunter parses this index and build a lookup of article titles and links
+3. AutoHunter performs a first pass analysis on the links using normal mode and attempts to extract IOCs
+4. If the article was unable to be parsed with normal mode the article will be flagged as `TORETRY` in `autohunter_ioc_log.csv`
+5. A second scheduled search passes over `autohunter_ioc_log.csv` for articles that were unable to be parsed with normal mode (marked as `TORETRY`)
+6. These remaining articles are parsed using advanced mode and IOCs are extracted
+7. Extracted IOCs (stored in `autohunter_ioc_log.csv` are hunted by data type with the remaining scheduled searches with results notifying you by your chosen alert action.
