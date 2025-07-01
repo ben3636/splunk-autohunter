@@ -13,7 +13,7 @@ If an article's content is not being retrieved in normal mode, there may be a Ja
 > API for above container would be http://\<IP\>:4444/wd/hub
 
 ## Webreader Command Usage
-The `webreader` command is the heart of the product. It takes a url argument and retrieves the contents of the article. Specifically how this is done depends on whether you specific `mode=normal` or `mode=advanced`. Remember, if you're using advanced mode you'll need to specify `selenium_server` so `webreader` knows where to contact Selenium.
+The `webreader` command is the heart of the product. It takes a `url` argument and retrieves the contents of the article. Specifically how this is done depends on whether you specific `mode=normal` or `mode=advanced`. Remember, if you're using advanced mode you'll need to specify `selenium_server` so `webreader` knows where to contact Selenium.
 
 Below are some examples of how you can use `webreader` to ingest the content of online articles directly into Splunk:
 
