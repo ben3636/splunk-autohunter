@@ -11,7 +11,7 @@ While using the main dashboard and/or the `webreader` command, you will notice t
 
 If an article's content is not being retrieved in normal mode, there may be a Javascript requirement or some kind of webscraping protection. If this is the case you'll need to use advanced mode. Advanced mode passes the responsibility of retrieving the web content off to a Selenium API. You'll need to setup something like Selenium Grid for this. When I say setup I mean pull down and start a Selenium docker container and expose the API port, it takes all of 60 seconds.
 
-> Example Selenium container: docker run -d -p 4444:4444 selenium/standalone-chrome
+> Example Selenium container: docker run -d -p 4444:4444 --shm-size=2g selenium/standalone-chrome
 
 > API for above container would be http://\<IP\>:4444/wd/hub
 
