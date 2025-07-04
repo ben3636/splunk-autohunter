@@ -1,4 +1,4 @@
-# AutoHunter - Intelligence, Actioned
+# AutoHunter
 ![Alt text](Logo.png)
 
 AutoHunter is a collection of custom Splunk commands and dashboards that serve to quickly ingest and extract IOC data from online articles. Once extracted, the IOCs are then instantly hunted in various telemetry sources.
