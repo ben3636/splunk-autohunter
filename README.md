@@ -15,7 +15,7 @@ AutoHunter has scheduled searches available out of the box that look for RSS dat
 AutoHunter has a few scheduled searches that make the magic happen including:
 
 1. Checking the RSS stash index for new articles
-2. Performing a `basic` pass at new articles attempting to read and extract any IOCs
+2. Performing a `normal` pass at new articles attempting to read and extract any IOCs
 3. Performing a secondary fallback pass with `advanced` mode (Selenium) for any articles that `basic` mode was not able to handle
 4. Performing housekeeping on the IOC lookup to remove duplicate entries
 5. Hunting the IOCs stored in the lookup in various datasources (network, web, dns, etc)
