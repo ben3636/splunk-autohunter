@@ -61,5 +61,5 @@ AutoHunter can automatically read, extract IOCs from, and hunt articles from RSS
 3. AutoHunter performs a first pass analysis on the links using `normal` mode and attempts to extract IOCs (regex is stored in the `extract_iocs` macro)
 4. If the article was unable to be parsed with `normal` mode the article will be flagged as `TORETRY` in `autohunter_ioc_log.csv`
 5. A second scheduled search passes over `autohunter_ioc_log.csv` for articles that were unable to be parsed with `normal` mode (marked as `TORETRY`)
-6. These remaining articles are parsed using `advanced` mode and IOCs are extracted. If AutoHunter was able to extract IOCs from the article at this point, the article is marked as `DONE` in `autohunter_ioc_log.csv`. If there are still no yield from extraction, it is marked with `NOIOCS`.
+6. These remaining articles are parsed using `advanced` mode and IOCs are extracted. If AutoHunter was able to extract IOCs from the article at this point, the article is marked as `DONE` in `autohunter_ioc_log.csv`. If there is still no yield from extraction, it is marked with `NOIOCS`.
 7. Extracted IOCs (stored in `autohunter_ioc_log.csv` are hunted by data type with the remaining scheduled searches and any findings are sent to you via webhook or whichever custom alert action you've setup.
