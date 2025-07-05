@@ -63,3 +63,5 @@ AutoHunter can automatically read, extract IOCs from, and hunt articles from RSS
 5. A second scheduled search passes over `autohunter_ioc_log.csv` for articles that were unable to be parsed with `normal` mode (marked as `TORETRY`)
 6. These remaining articles are parsed using `advanced` mode and IOCs are extracted. If AutoHunter was able to extract IOCs from the article at this point, the article is marked as `DONE` in `autohunter_ioc_log.csv`. If there is still no yield from extraction, it is marked with `NOIOCS`.
 7. Extracted IOCs (stored in `autohunter_ioc_log.csv` are hunted by data type with the remaining scheduled searches and any findings are sent to you via webhook or whichever custom alert action you've setup.
+
+> NOTE: It is normal to see some two-part statuses in the "Article Parsing Status" portion of the AutoHunts dashboard such as `TORETRY DONE` or `TORETRY NOIOCS`. This indicates some articles have gone through secondary extraction by advanced mode after the first normal mode pass. This double status goes away when the housekeeping scheduled search runs twice an hour to keep only the latest status tag for each article.
