@@ -5,7 +5,7 @@ AutoHunter is a collection of custom Splunk commands and dashboards that serve t
 
 > NOTE: Elements of the main dashboard use the `askllama` command to summarize articles using a local LLM, you can install the command here if you'd like to use this functionality: https://github.com/ben3636/splunk-llama
 
-## Inital Setup & Basic Usage
+## Initial Setup & Basic Usage
 For basic autohunting by pasting a URL into the main dashboard (`AutoHunter`), there is no setup required. This should be ready to go out of the box. Notice there is a `mode` option that defaults to `normal`. This should be fine in most cases but if you find that your URL isn't returning results you will need to switch to `advanced` mode which requires a Selenium API to be specified. The difference between `normal` and `advanced` mode is covered in detail in the technical portion of the README.
 
 The second dashboard in the app (`AutoHunts`) is the hub for `Autonomous Hunting`. Feel free to reread that sentence again, it gives me chills every time. This functionality is made possible by AutoHunter's sister app, `RSS Streamer`. RSS Streamer (https://github.com/ben3636/splunk-rss) allows you to specify RSS feeds in a lookup and Splunk will automatically ingest the feed data to a stash index. AutoHunter can then collect all the links to the articles from this data, start reading the articles, extracting the IOCs, and performing hunts autonomously (the crowd gasps). Neat trick right? AutoHunter is a beast on her own but when she teams up with her sister they're a force to be reckoned with. 
