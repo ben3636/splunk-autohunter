@@ -22,6 +22,8 @@ AutoHunter has a few scheduled searches that make the magic happen including:
 6. Notifying you via webhook when a new article is processed and if any IOCs were found in it (optional, I send this to a muted Discord channel I can pop into from time to time to see if it's hunted something already)
 7. Alerting you of any actual IOC findings within your environment. This will send an alert to the webhook or other alert action you configure with basic information about the IOC and impacted asset.
 
+> NOTE: For a complete walkthrough on getting autonomous hunting up and running from a stock Splunk instance, watch the demo video below
+
 ## Demo
 https://drive.google.com/file/d/12mVLEtFxBs5_Jraz8Xf_aMuzLSFCtbOJ/view?usp=sharing
 
