@@ -1,5 +1,10 @@
 # AutoHunter
 ![Alt text](Logo.png)
+![Alt text](Demo1.png)
+![Alt text](Demo2.png)
+![Alt text](Demo3.png)
+![Alt text](Demo4.PNG)
+![Alt text](Demo5.PNG)
 
 AutoHunter is a collection of custom Splunk commands and dashboards that serve to quickly ingest and extract IOC data from online articles. Once extracted, the IOCs are then instantly hunted in various telemetry sources.
 
@@ -80,6 +85,4 @@ Below is the default layout for the various scheduled operations:
 ## Feature Preview & Final Thoughts
 1. There are still some remaining hiccups with the IOC extraction regex for certain sites. I've taken care of the big ones but as I test the app on around 2000 articles things pop up here and there that will be addressed in future updates. 
 2. I'm also aware some users will want to forego the use of advanced mode/Selenium. For the main dashboard/adhoc searching this isn't an issue. For the autonomous hunting feature, if you choose to not setup/enable the "second pass" scheduled search that attempts to parse the finicky RSS sources with `advanced mode` you will still get all of the extracted IOCs and hunting `normal mode` accomplishes in the first pass but any articles in the feeds that block normal mode will not be further parsed and hunted as they usually would. This will show up as a bunch of "TORETRY" statuses in the AutoHunts dashboard. This isn't a problem and is expected as the app has noted that those articles did not yield any IOCs with normal mode and would normally follow up with advanced as a final effort. This ensures there are actually no IOCs to extract from the article and it isn't just an issue of normal mode being blocked due to lack of Javascript/cookie support. Leaving the advanced mode scheduled search off is absolutely viable, just note that the status of articles will not reach their final state as either DONE or NOIOCS and will stay as TORETRY.
-3. I will be adding a tuning macro to the scheduled searches responsible for the hunting. Certain OSINT sources may reference a private IP and that's obviously not something you need hunted in your environment so that macro will have some basic exclusions by default. This will also be the place for you to exclude findings you don't want to be notified about in general as well.  
-4. I will be adding another scheduled search to hunt for the IPv4 IOCs in the Authentication Datamodel as well :)
-
+3. There are two sample Discord alert actions in the app out of the box. If you want to use these you just need to paste your webhook URL into each file in the app's bin directory. There are two so you can send actual findings to a monitored channel and the new hunt notifications to a muted channel for general reference.
