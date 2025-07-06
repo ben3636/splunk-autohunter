@@ -21,7 +21,7 @@ AutoHunter has a few scheduled searches that make the magic happen including:
 
 1. Checking the RSS stash index for new articles
 2. Performing a `normal` pass at new articles attempting to read and extract any IOCs
-3. Performing a secondary fallback pass with `advanced` mode (Selenium) for any articles that `basic` mode was not able to handle
+3. Performing a secondary fallback pass with `advanced` mode (Selenium) for any articles that `normal` mode was not able to handle
 4. Performing housekeeping on the IOC lookup to remove duplicate entries
 5. Hunting the IOCs stored in the lookup in various datasources (network, web, dns, etc)
 6. Notifying you via webhook when a new article is processed and if any IOCs were found in it (optional, I send this to a muted Discord channel I can pop into from time to time to see if it's hunted something already)
