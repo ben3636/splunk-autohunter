@@ -66,6 +66,15 @@ AutoHunter can automatically read, extract IOCs from, and hunt articles from RSS
 6. These remaining articles are parsed using `advanced` mode and IOCs are extracted. If AutoHunter was able to extract IOCs from the article at this point, the article is marked as `DONE` in `autohunter_ioc_log.csv`. If there is still no yield from extraction, it is marked with `NOIOCS`.
 7. Extracted IOCs (stored in `autohunter_ioc_log.csv` are hunted by data type with the remaining scheduled searches and any findings are sent to you via webhook or whichever custom alert action you've setup.
 
+Below is the default layout for the various scheduled operations:
+1. Check for New RSS Articles - Start of every hour
+2. Normal mode first pass at new OSINT - 10 minutes and 40 minutes past the hour
+3. Advanced mode second pass at the new OSINT - 20 minutes and 50 minutes past the hour
+4. IOC Lookup Cleanup - Start of each hour and 30 minutes past the hour
+5. Various IOC hunts based on data type - Every 15 minutes
+6. New hunt notification - Every 15 minutes
+7. Alert for hunt findings - Every 5 minutes
+
 > NOTE: It is normal to see some two-part statuses in the "Article Parsing Status" portion of the AutoHunts dashboard such as `TORETRY DONE` or `TORETRY NOIOCS`. This indicates some articles have gone through secondary extraction by advanced mode after the first normal mode pass. This double status goes away when the housekeeping scheduled search runs twice an hour to keep only the latest status tag for each article.
 
 ## Feature Preview & Final Thoughts
