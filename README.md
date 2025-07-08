@@ -34,9 +34,9 @@ AutoHunter has a few scheduled searches that make the magic happen including:
 ## Demo
 Full Setup & Demo: https://youtu.be/Md9MX4fj4T4
 
-https://drive.google.com/file/d/1LthJq1NksqcL6FbdTk-SsJRgvjyxL7Et/view?usp=share_link
+Standalone Product Demo: https://drive.google.com/file/d/1LthJq1NksqcL6FbdTk-SsJRgvjyxL7Et/view?usp=share_link
 
-https://drive.google.com/file/d/12mVLEtFxBs5_Jraz8Xf_aMuzLSFCtbOJ/view?usp=sharing
+Alternate Demo: https://drive.google.com/file/d/12mVLEtFxBs5_Jraz8Xf_aMuzLSFCtbOJ/view?usp=sharing
 
 ## Technical Stuff - What Happens Behind the Curtain
 The app's core ability to read web content is driven by the `webreader` command. This takes a few arguments such as URL and mode and grabs the contents of the specified article so the IOC extraction regex monster can sniff out those sweet sweet IOCs.
