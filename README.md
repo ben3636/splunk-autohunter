@@ -30,6 +30,8 @@ AutoHunter has a few scheduled searches that make the magic happen including:
 > NOTE: For a complete walkthrough on getting autonomous hunting up and running from a stock Splunk instance, watch the demo video below
 
 ## Demo
+Full Setup & Demo: https://youtu.be/Md9MX4fj4T4
+
 https://drive.google.com/file/d/1LthJq1NksqcL6FbdTk-SsJRgvjyxL7Et/view?usp=share_link
 
 https://drive.google.com/file/d/12mVLEtFxBs5_Jraz8Xf_aMuzLSFCtbOJ/view?usp=sharing
