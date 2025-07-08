@@ -28,6 +28,7 @@ AutoHunter has a few scheduled searches that make the magic happen including:
 7. Alerting you of any actual IOC findings within your environment. This will send an alert to the webhook or other alert action you configure with basic information about the IOC and impacted asset.
 
 > NOTE: For a complete walkthrough on getting autonomous hunting up and running from a stock Splunk instance, watch the demo video below
+
 > NOTE: Hunting result panels in the main `AutoHunter` dashboard as well as the scheduled searches relating to hash, ASM, or vulnerability data will need to be manually configured for whatever indexes/sourcetypes you use for this data. There are placeholder values in by default but because these data types are often not in the standard datamodels you will need to point them at your specific locations.
 
 ## Demo
