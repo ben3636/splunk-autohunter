@@ -38,6 +38,8 @@ Standalone Product Demo: https://drive.google.com/file/d/1LthJq1NksqcL6FbdTk-SsJ
 
 Alternate Demo: https://drive.google.com/file/d/12mVLEtFxBs5_Jraz8Xf_aMuzLSFCtbOJ/view?usp=sharing
 
+Discord Webhook Setup: https://youtu.be/JiAArVUrb_s
+
 ## Technical Stuff - What Happens Behind the Curtain
 The app's core ability to read web content is driven by the `webreader` command. This takes a few arguments such as URL and mode and grabs the contents of the specified article so the IOC extraction regex monster can sniff out those sweet sweet IOCs.
 
